@@ -1,0 +1,65 @@
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-sm-8">
+
+      <div class="flat-show-card">
+        <h1><%= @flat.name %></h1>
+        <p class="flat-show-address"><%= @flat.address %></p>
+      </div>
+
+      <div class="flat-show-card">
+        <h4>A bit more about this flat...</h4>
+        <p><%= @flat.description %></p>
+      </div>
+
+      <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      ></div>
+
+      <%= link_to "Back to all flats", flats_path, class: 'btn btn-danger margin-top-50 back-btn-red' %>
+    </div>
+
+
+    <div class="col-sm-4">
+
+      <div class="flat-show-card">
+        <h5>Book this place!</h5>
+        <div class="wrapper">
+          <div class="e-form-row">
+            <label class="e-form-label">Select start date:</label>
+            <input type="text" id="flatpickr-input">
+            <label class="e-form-label">Select end date:</label>
+            <input type="text" id="flatpickr-input">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flat-show-card">
+        <h3>Details:</h3>
+        <div class="flex">
+          <div class="flex">
+            <p><i class="fas fa-users darkslategray"></i> <%= @flat.number_of_guests %></p>
+          </div>
+          <div class="flex">
+            <p class='margin-left-20'>£<%= @flat.price_per_night %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flat-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
+          <div class="flex space-between">
+            <i class="fab fa-facebook-square fa-2x mr-2"></i>
+            <i class="fab fa-twitter-square fa-2x mr-2"></i>
+            <i class="fab fa-pinterest-square fa-2x mr-2"></i>
+            <i class="fas fa-envelope-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
